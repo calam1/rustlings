@@ -1,6 +1,5 @@
 // if1.rs
 
-// I AM NOT DONE
 
 pub fn bigger(a: i32, b: i32) -> i32 {
     // Complete this function to return the bigger number!
@@ -8,6 +7,12 @@ pub fn bigger(a: i32, b: i32) -> i32 {
     // - another function call
     // - additional variables
     // Execute `rustlings hint if1` for hints
+    let sum = a - b;
+    match sum{
+        sum if sum > 0 => a,
+        sum if sum < 0 => b,
+        _ => a
+    }
 }
 
 // Don't mind this for now :)

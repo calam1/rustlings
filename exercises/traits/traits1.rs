@@ -8,7 +8,6 @@
 // which appends "Bar" to any object
 // implementing this trait.
 
-// I AM NOT DONE
 
 trait AppendBar {
     fn append_bar(self) -> Self;
@@ -16,6 +15,12 @@ trait AppendBar {
 
 impl AppendBar for String {
     //Add your code here
+    fn append_bar(self) -> Self {
+        let mut str = self.to_owned();
+        let bar = "Bar";
+        str.push_str(bar);
+        str
+    }
 }
 
 fn main() {
@@ -29,12 +34,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn is_FooBar() {
+    fn is_foo_bar() {
         assert_eq!(String::from("Foo").append_bar(), String::from("FooBar"));
     }
 
     #[test]
-    fn is_BarBar() {
+    fn is_bar_bar() {
         assert_eq!(
             String::from("").append_bar().append_bar(),
             String::from("BarBar")
